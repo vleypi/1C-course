@@ -1,0 +1,24 @@
+{
+  "title": "1С-разработчик",
+  "subtitle": "с нуля до junior",
+  "description": "Сквозной проект — конфигурация для барбершопа. Идём шаг за шагом: один урок за раз, каждый объясняем на пальцах.",
+  "weeklyLoad": "до 20 ч/нед",
+  "modules": [
+    "module-00",
+    "module-01",
+    "module-02",
+    "module-03",
+    "module-04",
+    "module-05",
+    "module-06",
+    "module-07",
+    "module-08",
+    "module-09",
+    "module-final-base",
+    "module-10",
+    "module-11",
+    "module-12",
+    "module-13",
+    "module-final-extended"
+  ]
+}

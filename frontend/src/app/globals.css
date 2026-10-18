@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  --color-ink: #1b1c1f;
+  --color-card: #26272b;
+  --color-raise: #2f3035;
+  --color-line: #3a3b40;
+  --color-muted: #9a9ba1;
+  --color-paper: #f4f3ef;
+  --color-accent: #ffd84d;
+  --color-code: #18191c;
+
+  --animate-fade-in: fade-in 400ms ease-out;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
+[data-rehype-pretty-code-figure] {
+  @apply mt-6 overflow-hidden rounded-2xl border border-line bg-code;
+}
+
+[data-rehype-pretty-code-title] {
+  @apply border-b border-line px-4 py-2.5 text-xs tracking-wider text-muted uppercase;
+}
+
+[data-rehype-pretty-code-figure] pre {
+  @apply overflow-x-auto py-4 font-mono text-sm leading-7;
+}
+
+[data-rehype-pretty-code-figure] [data-line] {
+  @apply px-4;
+}
