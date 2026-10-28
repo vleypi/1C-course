@@ -1,25 +1,16 @@
+import type { ComponentType } from "react";
+import { AlertIcon, BookmarkIcon, LightbulbIcon } from "@/shared/ui/icons/icons";
+import type { IIconProps } from "@/shared/ui/icons/SvgIcon";
+
 export type CalloutVariant = "fingers" | "remember" | "important";
 
 interface ICalloutStyle {
   title: string;
-  boxClassName: string;
-  titleClassName: string;
+  Icon: ComponentType<IIconProps>;
 }
 
 export const CALLOUT_STYLES: Record<CalloutVariant, ICalloutStyle> = {
-  fingers: {
-    title: "На пальцах",
-    boxClassName: "border-accent/30 bg-accent/10",
-    titleClassName: "text-accent",
-  },
-  remember: {
-    title: "Запомни",
-    boxClassName: "border-emerald-400/30 bg-emerald-400/10",
-    titleClassName: "text-emerald-300",
-  },
-  important: {
-    title: "Важно",
-    boxClassName: "border-sky-400/30 bg-sky-400/10",
-    titleClassName: "text-sky-300",
-  },
+  fingers: { title: "На пальцах", Icon: LightbulbIcon },
+  remember: { title: "Запомните", Icon: BookmarkIcon },
+  important: { title: "Важно", Icon: AlertIcon },
 };

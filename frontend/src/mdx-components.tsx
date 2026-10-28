@@ -1,4 +1,6 @@
 import type { MDXComponents } from "mdx/types";
+import { Quiz, QuizOption } from "@/features/answer-quiz";
+import { AnswerInput } from "@/features/check-answer";
 import * as content from "@/shared/ui/content";
 import {
   Anchor,
@@ -19,6 +21,9 @@ import {
 
 const components = {
   ...content,
+  Quiz,
+  QuizOption,
+  AnswerInput,
   h2: Heading2,
   h3: Heading3,
   p: Paragraph,

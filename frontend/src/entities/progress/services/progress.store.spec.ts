@@ -40,4 +40,23 @@ describe("ProgressStore", () => {
   it("отдаёт пустой прогресс для серверного рендера", () => {
     expect(new ProgressStore(createMemoryStorage()).getServerSnapshot()).toBe(EMPTY_PROGRESS);
   });
+
+  it("запоминает первый ответ на задание и не даёт переответить", () => {
+    const storage = createMemoryStorage();
+    const store = new ProgressStore(storage);
+
+    store.answerExercise("00/01/01#quiz", ["2"]);
+    store.answerExercise("00/01/01#quiz", ["0"]);
+
+    expect(store.getSnapshot().exerciseAnswers).toEqual({ "00/01/01#quiz": ["2"] });
+    expect(storage.saved).toHaveLength(1);
+  });
+
+  it("сохраняет «не знаю» как пустой ответ", () => {
+    const store = new ProgressStore(createMemoryStorage());
+
+    store.answerExercise("00/01/01#input", []);
+
+    expect(store.getSnapshot().exerciseAnswers).toEqual({ "00/01/01#input": [] });
+  });
 });

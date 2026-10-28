@@ -1,6 +1,14 @@
 import { EMPTY_PROGRESS } from "@/entities/progress/constants/progress.constant";
-import type { IProgressSnapshot, IProgressStorage } from "@/entities/progress/interfaces/progress.interface";
-import { withCompletedLesson, withRevealedSteps } from "@/entities/progress/utils/progress-updates.util";
+import type {
+  ExerciseResponse,
+  IProgressSnapshot,
+  IProgressStorage,
+} from "@/entities/progress/interfaces/progress.interface";
+import {
+  withCompletedLesson,
+  withExerciseAnswer,
+  withRevealedSteps,
+} from "@/entities/progress/utils/progress-updates.util";
 
 type Listener = () => void;
 
@@ -37,6 +45,10 @@ export class ProgressStore {
 
   revealSteps(lessonId: string, stepCount: number): void {
     this.#commit(withRevealedSteps(this.getSnapshot(), lessonId, stepCount));
+  }
+
+  answerExercise(exerciseKey: string, response: ExerciseResponse): void {
+    this.#commit(withExerciseAnswer(this.getSnapshot(), exerciseKey, response));
   }
 
   #commit(next: IProgressSnapshot): void {

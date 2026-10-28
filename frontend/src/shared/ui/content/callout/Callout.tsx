@@ -1,5 +1,4 @@
 import type { ReactNode } from "react";
-import { joinClassNames } from "@/shared/lib";
 import { CALLOUT_STYLES, type CalloutVariant } from "@/shared/ui/content/callout/callout.constant";
 
 interface ICalloutProps {
@@ -8,12 +7,13 @@ interface ICalloutProps {
 }
 
 export const Callout = ({ variant, children }: ICalloutProps) => {
-  const style = CALLOUT_STYLES[variant];
+  const { title, Icon } = CALLOUT_STYLES[variant];
 
   return (
-    <aside className={joinClassNames("mt-8 rounded-2xl border p-6 [&>p]:mt-3", style.boxClassName)}>
-      <p className={joinClassNames("!mt-0 text-sm font-bold uppercase tracking-widest", style.titleClassName)}>
-        {style.title}
+    <aside className="mt-8 rounded-2xl bg-card p-6 text-zinc-300 [&>p]:mt-3">
+      <p className="!mt-0 flex items-center gap-2 font-semibold text-zinc-50">
+        <Icon className="size-5 text-accent" />
+        {title}
       </p>
       {children}
     </aside>

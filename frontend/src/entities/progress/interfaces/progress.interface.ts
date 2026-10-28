@@ -1,6 +1,9 @@
+export type ExerciseResponse = readonly string[];
+
 export interface IProgressSnapshot {
   completedLessonIds: readonly string[];
   revealedSteps: Readonly<Record<string, number>>;
+  exerciseAnswers: Readonly<Record<string, ExerciseResponse>>;
 }
 
 export interface IProgressStorage {

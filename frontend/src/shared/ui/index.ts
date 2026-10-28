@@ -1,6 +1,8 @@
 export { Dialog } from "@/shared/ui/dialog/Dialog";
 export { RouteDialog } from "@/shared/ui/dialog/RouteDialog";
-export { CheckIcon, ChevronRightIcon, CloseIcon, LockIcon, ProgressIcon } from "@/shared/ui/icons/icons";
+export { ExerciseCard } from "@/shared/ui/exercise/ExerciseCard";
+export { ExerciseVerdict } from "@/shared/ui/exercise/ExerciseVerdict";
+export { ArrowDownIcon, CheckIcon, ChevronRightIcon, CloseIcon, LockIcon, ProgressIcon } from "@/shared/ui/icons/icons";
 export { Container } from "@/shared/ui/layout/Container";
 export { ListRowLink } from "@/shared/ui/list-row/ListRowLink";
 export { ListRowLocked } from "@/shared/ui/list-row/ListRowLocked";
